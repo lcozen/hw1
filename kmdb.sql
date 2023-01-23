@@ -119,10 +119,24 @@ CREATE TABLE top_cast (
     character_name TEXT
 );
 
-
 -- Insert data into your database that reflects the sample data shown above
 -- Use hard-coded foreign key IDs when necessary
 -- TODO!
+
+INSERT INTO movies (
+  movie_title,
+  year_released,
+  mpaa_rating,
+  studio
+)
+VALUES (
+  "Batman Begins",
+  2005,
+  "PG-13",
+  "Warner Bros."
+)
+
+SELECT * FROM movies;
 
 -- Prints a header for the movies output
 .print "Movies"
@@ -141,20 +155,3 @@ CREATE TABLE top_cast (
 
 -- The SQL statement for the cast output
 -- TODO!
-
-
-CREATE TABLE Movies (
-    movie_title TEXT,
-    year_released INTEGER,
-    mpaa_rating TEXT,
-    studio TEXT
-);
-
-CREATE TABLE top_cast (
-    movie_title TEXT,
-    actor TEXT,
-    character_name TEXT
-);
-
-
-)
