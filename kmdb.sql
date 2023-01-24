@@ -137,9 +137,7 @@ CREATE TABLE studios (
 -- TODO!
 
 INSERT INTO movies (title, year, rating)
-VALUES ("Batman Begins", 2005, "PG-13"),
-    ("The Dark Knight", 2008, "PG-13"),
-    ("The Dark Knight Rises", 2012, "PG-13");
+VALUES ("Batman Begins", 2005, "PG-13"),("The Dark Knight", 2008, "PG-13"),("The Dark Knight Rises", 2012, "PG-13");
 
 INSERT INTO actors (name)
 VALUES  ("Christian Bale"),("Michael Caine"), ("Liam Neeson"),("Katie Holmes"), ("Gary Oldman"), ("Heath Ledger"),("Aaron Eckhart"), ("Maggie Gyllenhaal"), 
@@ -164,10 +162,7 @@ VALUES
 (3, 11, "Selina Kyle");
 
 INSERT INTO studios (studio, movie_id)
-VALUES 
-("Warner Bros.", 1),
-("Warner Bros.", 2),
-("Warner Bros.", 3);
+VALUES ("Warner Bros.", 1), ("Warner Bros.", 2),("Warner Bros.", 3);
 
 
 -- Prints a header for the movies output
@@ -192,6 +187,7 @@ FROM movies INNER JOIN studios on movies.id = studios.movie_id;
 -- TODO!
 
 SELECT movies.title, actors.name, top_cast.character 
-FROM top_cast INNER JOIN movies on top_cast.movie_id = movies.id
+FROM top_cast 
+INNER JOIN movies on top_cast.movie_id = movies.id
 INNER JOIN actors on top_cast.actor_id = actors.id
 ;
